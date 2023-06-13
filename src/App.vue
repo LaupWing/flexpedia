@@ -9,32 +9,18 @@
       </div>
       <nav class="flex flex-col my-auto gap-y-10 text-sm">
          <RouterLink 
-            class="flex flex-col items-center gap-y-1 opacity-40"
+            class="flex flex-col items-center gap-y-1 opacity-40 relative py-2 justify-center"
             exact-active-class="opacity-100" 
-            to="/"
+            v-for="(link, index) in links"
+            :key="index"
+            :to="link.href"
          >
-            <IconHome />
-            Home
-         </RouterLink>
-         <RouterLink 
-            class="flex flex-col items-center gap-y-1 opacity-40" 
-            exact-active-class="opacity-100"
-            to="/about"
-         >
-            <IconInfo />
-            About
-         </RouterLink>
-         <RouterLink 
-            class="flex flex-col items-center gap-y-1 opacity-40"
-            exact-active-class="opacity-100" 
-            to="/secret"
-         >
-            <IconLock />
-            Secret
+            <component :is="link.icon"/>
+            {{ link.text }}
          </RouterLink>
       </nav>
    </header>
-   <div class="flex-1 p-4 flex">
+   <div class="flex-1 p-4 pl-0 flex">
       <RouterView />
    </div>
 </template>
@@ -46,5 +32,37 @@ import IconHome from "./components/icons/IconHome.vue"
 import IconInfo from "./components/icons/IconInfo.vue"
 import IconLock from "./components/icons/IconLock.vue"
 
-
+const links:Array<{
+   href: string,
+   icon: any,
+   text: string
+}> = [
+   {
+      href: "/",
+      icon: IconHome,
+      text: "Home"
+   },
+   {
+      href: "/about",
+      icon: IconInfo,
+      text: "About"
+   },
+   {
+      href: "/secret",
+      icon: IconLock,
+      text: "Secret"
+   }
+]
 </script>
+
+<style scoped>
+.router-link-active::after {
+   content: "";
+   width: 5px;
+   height: 100%;
+   background-color: white;
+   position: absolute;
+   right: 0;
+   border-radius: 3px 0 0 3px;
+}
+</style>
