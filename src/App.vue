@@ -7,9 +7,21 @@
             alt=""
          >
       </div>
-      <nav class="flex flex-col my-auto">
-         <RouterLink to="/">Home</RouterLink>
-         <RouterLink to="/about">About</RouterLink>
+      <nav class="flex flex-col my-auto gap-y-10 text-sm">
+         <RouterLink 
+            class="flex flex-col items-center gap-y-1" 
+            to="/"
+         >
+            <IconHome />
+            Home
+         </RouterLink>
+         <RouterLink 
+            class="flex flex-col items-center gap-y-1" 
+            to="/about"
+         >
+            <IconInfo />
+            About
+         </RouterLink>
       </nav>
    </header>
    <div class="flex-1 p-4 flex">
@@ -19,7 +31,9 @@
 
 
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView } from "vue-router"
+import IconHome from "./components/icons/IconHome.vue"
+import IconInfo from "./components/icons/IconInfo.vue"
 </script>
 
 
