@@ -9,21 +9,24 @@
       </div>
       <nav class="flex flex-col my-auto gap-y-10 text-sm">
          <RouterLink 
-            class="flex flex-col items-center gap-y-1" 
+            class="flex flex-col items-center gap-y-1 opacity-40"
+            exact-active-class="opacity-100" 
             to="/"
          >
             <IconHome />
             Home
          </RouterLink>
          <RouterLink 
-            class="flex flex-col items-center gap-y-1" 
+            class="flex flex-col items-center gap-y-1 opacity-40" 
+            exact-active-class="opacity-100"
             to="/about"
          >
             <IconInfo />
             About
          </RouterLink>
          <RouterLink 
-            class="flex flex-col items-center gap-y-1" 
+            class="flex flex-col items-center gap-y-1 opacity-40"
+            exact-active-class="opacity-100" 
             to="/secret"
          >
             <IconLock />
