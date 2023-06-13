@@ -22,6 +22,13 @@
             <IconInfo />
             About
          </RouterLink>
+         <RouterLink 
+            class="flex flex-col items-center gap-y-1" 
+            to="/secret"
+         >
+            <IconLock />
+            Secret
+         </RouterLink>
       </nav>
    </header>
    <div class="flex-1 p-4 flex">
@@ -34,9 +41,7 @@
 import { RouterLink, RouterView } from "vue-router"
 import IconHome from "./components/icons/IconHome.vue"
 import IconInfo from "./components/icons/IconInfo.vue"
+import IconLock from "./components/icons/IconLock.vue"
+
+
 </script>
-
-
-<style scoped>
-
-</style>
