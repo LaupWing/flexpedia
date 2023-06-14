@@ -44,8 +44,10 @@ const translationStore = useTranslationStore()
 const {t} = useI18n()
 
 const handleChange = (e: Event) => {
-   console.log((e.target as HTMLInputElement).checked)
+   translationStore.switchLocale((e.target as HTMLInputElement).checked)
 }
+
+translationStore.setLocale(translationStore.lang)
 
 const isEnglish = computed(() => {
    return translationStore.lang === "en"
