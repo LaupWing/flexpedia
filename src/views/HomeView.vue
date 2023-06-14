@@ -1,5 +1,5 @@
 <template>
-   <main class="bg-main flex-1 rounded-2xl">
+   <main class="custom-container">
       <h1>Test</h1>
    </main>
 </template>
