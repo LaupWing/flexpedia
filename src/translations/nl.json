@@ -1,0 +1,9 @@
+{
+   "nav": {
+      "home": "Homepagina",
+      "about": "Over mij"
+   },
+   "home":{
+      "greeting": "Goedendag"
+   }
+}
