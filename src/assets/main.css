@@ -5,6 +5,6 @@
 
 @layer base {
    .custom-container {
-      @apply bg-main flex-1 rounded-2xl p-6;
+      @apply bg-main flex-1 rounded-2xl p-10;
    }
 }
