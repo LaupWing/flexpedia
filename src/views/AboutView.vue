@@ -1,6 +1,6 @@
 <template>
    <main class="custom-container">
-      <h1 class="text-4xl">{{ t("home.greeting") }}</h1>
+      <h1 class="text-4xl">{{ t("about.content") }}</h1>
    </main>
 </template>
 
