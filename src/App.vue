@@ -50,7 +50,6 @@ const handleChange = (e: Event) => {
 const isEnglish = computed(() => {
    return translationStore.lang === "en"
 })
-console.log(isEnglish.value)
 
 const links: Array<{
    href: string,

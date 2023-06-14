@@ -9,6 +9,9 @@ const userLocale =  window.navigator.language || defaultLocale
 export const useTranslationStore = defineStore("translation", () => {
    const lang = ref<string>(guessDefaultLocale())
    
+   function setLocale(newLocale: string){
+      i18n.global.lcoale.value = newLocale
+   }
 
    function isSupported(locale: string){
       return supportedLocale.includes(locale)
@@ -40,6 +43,7 @@ export const useTranslationStore = defineStore("translation", () => {
 
    const switchLocale = (isEng: boolean) => {
       const newLocale = isEng ? "en" : "nl"
+      setLocale(newLocale)
       document.querySelector("html")?.setAttribute("lang", newLocale)
       localStorage.setItem("user-locale", newLocale)
    }  
