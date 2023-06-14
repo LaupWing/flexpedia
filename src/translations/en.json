@@ -1,7 +1,8 @@
 {
    "nav": {
       "home": "Home",
-      "about": "About"
+      "about": "About",
+      "secret": "Secret"
    },
    "home":{
       "greeting": "Hello"

@@ -1,7 +1,8 @@
 {
    "nav": {
       "home": "Homepagina",
-      "about": "Over mij"
+      "about": "Over mij",
+      "secret": "Geheim"
    },
    "home":{
       "greeting": "Goedendag"
