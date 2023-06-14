@@ -1,15 +1,13 @@
 <template>
-   <div class="about">
-      <h1>This is an about page</h1>
-   </div>
+   <main class="custom-container">
+      <h1 class="text-4xl">{{ t("home.greeting") }}</h1>
+   </main>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-   .about {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-   }
-}
-</style>
+<script setup lang="ts">
+// @ts-ignore
+import { useI18n } from "vue-i18n"
+
+const {t} = useI18n()
+</script>
+
