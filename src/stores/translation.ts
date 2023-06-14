@@ -2,36 +2,30 @@ import { ref } from "vue"
 import { defineStore } from "pinia"
 // @ts-ignore
 import i18n from "vue-i18n"
+const supportedLocale =  import.meta.env.VITE_SUPPORTED_LOCALES.split(",") as Array<string>
+const defaultLocale = import.meta.env.VITE_DEFAULT_LOCALE
+const userLocale =  window.navigator.language || defaultLocale
 
 export const useTranslationStore = defineStore("translation", () => {
-   const lang = ref<string>("")
+   const lang = ref<string>(guessDefaultLocale())
    
-   const getSupportedLocales = () => {
-      return import.meta.env.VITE_SUPPORTED_LOCALES.split(",") as Array<string>
+
+   function isSupported(locale: string){
+      return supportedLocale.includes(locale)
    }
 
-   const getDefaultLocale = () => {
-      return import.meta.env.VITE_DEFAULT_LOCALE
-   }
-
-   const isSupported = (locale: string) => {
-      return getSupportedLocales().includes(locale)
-   }
-
-   const getUserLocale = () => {
-      const locale = window.navigator.language || getDefaultLocale()
-      return locale
-   }
-
-   const guessDefaultLocale = () => {
+   function guessDefaultLocale() {
       const persistedLocale = getPersistedLocale()
-
       if (persistedLocale){
          return persistedLocale
       }
+      if(isSupported(userLocale)){
+         return userLocale
+      }
+      return defaultLocale
    }
 
-   const getPersistedLocale = () => {
+   function getPersistedLocale(){
       const persistedLocale = localStorage.getItem("user-locale")
       
       if(!persistedLocale){
@@ -52,10 +46,11 @@ export const useTranslationStore = defineStore("translation", () => {
 
    return { 
       lang, 
-      getSupportedLocales, 
+      supportedLocale, 
       switchLocale, 
-      getDefaultLocale,
+      defaultLocale,
       getPersistedLocale,
-      isSupported
+      isSupported,
+      userLocale
    }
 })
