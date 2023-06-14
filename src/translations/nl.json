@@ -6,5 +6,8 @@
    },
    "home":{
       "greeting": "Goedendag"
+   },
+   "about": {
+      "content": "Hello, I'm Loc Nguyen. I love programming. For the past six years, there hasn't been a day when I haven't programmed. Programming is my hobby and my passion. In addition to programming, I also enjoy sports, mainly fitness and boxing. This provides a good balance between physical activity and mental stimulation."
    }
 }

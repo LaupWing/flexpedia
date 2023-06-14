@@ -6,5 +6,8 @@
    },
    "home":{
       "greeting": "Hello"
+   },
+   "about": {
+      "content": "Hallo, ik ben Loc Nguyen en ik ben dol op programmeren. Al zes jaar lang is er geen dag voorbijgegaan waarop ik niet heb geprogrammeerd. Programmeren is niet alleen mijn hobby, maar ook mijn passie. Naast programmeren geniet ik ook van sporten, met name fitness en boksen. Dit zorgt voor een gezonde balans tussen lichamelijke en mentale activiteit."
    }
 }
