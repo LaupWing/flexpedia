@@ -6,7 +6,7 @@
       <nav class="flex flex-col my-auto gap-y-10 text-sm">
          <RouterLink class="flex flex-col items-center gap-y-1 relative py-2 justify-center opacity-30" v-for="(link, index) in links" :key="index" :to="link.href">
             <component :is="link.icon" />
-            {{ link.text }}
+            {{ t(link.text) }}
          </RouterLink>
       </nav>
       <label class="relative inline-flex items-center cursor-pointer mx-auto mb-6">
@@ -26,6 +26,10 @@ import { RouterLink, RouterView } from "vue-router"
 import IconHome from "./components/icons/IconHome.vue"
 import IconInfo from "./components/icons/IconInfo.vue"
 import IconLock from "./components/icons/IconLock.vue"
+// @ts-ignore
+import { useI18n } from "vue-i18n"
+
+const {t} = useI18n()
 
 const links: Array<{
    href: string,
@@ -35,17 +39,17 @@ const links: Array<{
       {
          href: "/",
          icon: IconHome,
-         text: "Home"
+         text: "nav.home"
       },
       {
          href: "/about",
          icon: IconInfo,
-         text: "About"
+         text: "nav.about"
       },
       {
          href: "/secret",
          icon: IconLock,
-         text: "Secret"
+         text: "nav.secret"
       }
    ]
 </script>
