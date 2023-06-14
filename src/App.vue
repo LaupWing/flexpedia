@@ -9,8 +9,7 @@
       </div>
       <nav class="flex flex-col my-auto gap-y-10 text-sm">
          <RouterLink 
-            class="flex flex-col items-center gap-y-1 opacity-40 relative py-2 justify-center"
-            exact-active-class="opacity-100" 
+            class="flex flex-col items-center gap-y-1 relative py-2 justify-center opacity-30"
             v-for="(link, index) in links"
             :key="index"
             :to="link.href"
@@ -56,6 +55,9 @@ const links:Array<{
 </script>
 
 <style scoped>
+.router-link-active {
+   opacity: 100%!important;
+}
 .router-link-active::after {
    content: "";
    width: 5px;
