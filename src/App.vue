@@ -4,7 +4,11 @@
          <img class="w-20" src="https://www.flexpedia.nl/wp-content/uploads/2022/05/logo.svg" alt="">
       </div>
       <nav class="flex flex-col my-auto gap-y-10 text-sm">
-         <RouterLink class="flex flex-col items-center gap-y-1 relative py-2 justify-center opacity-30" v-for="(link, index) in links" :key="index" :to="link.href">
+         <RouterLink 
+            class="flex flex-col items-center gap-y-1 relative py-2 justify-center opacity-30" v-for="(link, index) in links" 
+            :key="index" 
+            :to="link.href"
+         >
             <component :is="link.icon" />
             {{ t(link.text) }}
          </RouterLink>
