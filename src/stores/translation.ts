@@ -18,8 +18,17 @@ export const useTranslationStore = defineStore("translation", () => {
       return getSupportedLocales().includes(locale)
    }
 
-   const guessDefaultLocale = () => {
+   const getUserLocale = () => {
+      const locale = window.navigator.language || getDefaultLocale()
+      return locale
+   }
 
+   const guessDefaultLocale = () => {
+      const persistedLocale = getPersistedLocale()
+
+      if (persistedLocale){
+         return persistedLocale
+      }
    }
 
    const getPersistedLocale = () => {
