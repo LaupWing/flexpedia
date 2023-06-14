@@ -1,10 +1,13 @@
 <template>
    <main class="custom-container">
-      <h1>Test</h1>
+      <h1>{{ t("home.greeting") }}</h1>
    </main>
 </template>
 
 <script setup lang="ts">
+// @ts-ignore
+import { useI18n } from "vue-i18n"
 
+const {t} = useI18n()
 </script>
 
