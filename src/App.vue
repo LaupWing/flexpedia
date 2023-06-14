@@ -68,11 +68,11 @@ const links: Array<{
          icon: IconInfo,
          text: "nav.about"
       },
-      {
-         href: "/secret",
-         icon: IconLock,
-         text: "nav.secret"
-      }
+      // {
+      //    href: "/secret",
+      //    icon: IconLock,
+      //    text: "nav.secret"
+      // }
    ]
 </script>
 
